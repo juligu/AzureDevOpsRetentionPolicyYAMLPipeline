@@ -1,0 +1,65 @@
+{
+    "manifestVersion": 1,
+    "id": "yaml-pipeline-lease-task",
+    "name": "Lease (Lock) pipeline runs",
+    "version": "1.0.2",
+    "publisher": "julioguzman",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "description": "Improve retention on multi-stage pipelines. Will create a Begin retention to avoid deletion when waiting for manual events, will add an End retention to retaint the latest customizable number of runs",
+    "categories": [
+        "Azure Pipelines"
+    ],
+    "tags": [
+        "lease",
+        "lock",
+        "pipelines",
+        "yaml",
+        "multi-stage",
+        "retention"
+    ],
+    "content": {
+        "details": {
+            "path": "overview.md"
+        },
+        "license": {
+            "path": "license.txt"
+        }
+    },
+    "icons": {
+        "default": "images/extension-icon.png"
+    },
+    "public": true,
+    "files": [
+        {
+            "path": "buildAndReleaseTask"
+        },
+        {
+            "path": "begin-lease-task.jpg",
+            "addressable": true
+        },
+        {
+            "path": "end-lease-task.jpg",
+            "addressable": true
+        },
+        {
+            "path": "create-lease-task.jpg",
+            "addressable": true
+        }
+    ],
+    "contributions": [
+        {
+            "id": "custom-build-release-task",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "buildAndReleaseTask"
+            }
+        }
+    ]
+}
